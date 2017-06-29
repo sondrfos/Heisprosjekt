@@ -1,6 +1,6 @@
 package definitions
 
-
+	
 const ELEVATORS 	int 	= 3
 const FLOORS 		int 	= 4
 const MESSAGEPORT 	int 	= 20200
@@ -12,13 +12,12 @@ const FILENAME		string 	= "heart.txt"
 type Buttons struct {
 	IntButtons    	[FLOORS]int
 	ExtUpButtons  	[FLOORS-1]int
-	ExtDwnButtons 	[FLOORS-1]int
+	ExtDwnButtons 	[FLOORS-1]int 		
 }
 
 type Elevator struct {
-	Name					string
 	Floor     		int 				//Last floor visited
-	Position  		int
+	Position  		int 				
 	Direction 		int
 	Light     		Buttons
 	Order     		Buttons
@@ -26,7 +25,7 @@ type Elevator struct {
 }
 
 type Message struct {
-	Elevators  		[]Elevator
+	Elevators  		map[string]Elevator
 	SenderID   		string
 	RecieverID 		string
 	MsgType    		int 				//Message identifier, 1 is input, 2 is queue,
